@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .event-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea, button {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Planner</h1>
+    
+    <h2>Featured Events</h2>
+    <div id="events-container" class="event-grid">
+        <!-- Random events will be displayed here -->
+        <p id="loading-message">Loading events...</p>
+    </div>
+
+    <h2>Add New Event</h2>
+    <form id="new-event-form">
+        <input type="text" id="name" placeholder="Event Name" required>
+        <input type="datetime-local" id="date" required>
+        <input type="text" id="location" placeholder="Location" required>
+        <textarea id="description" placeholder="Description" required></textarea>
+        <button type="submit">Add Event</button>
+    </form>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
